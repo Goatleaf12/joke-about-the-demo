@@ -13,10 +13,15 @@ JOKE = (
 )
 
 
+def render() -> str:
+    """Return the entry text: the one-line joke, nothing else."""
+    return JOKE
+
+
 def main() -> None:
     out = Path("/output/entry.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(JOKE, encoding="utf-8")
+    out.write_text(render(), encoding="utf-8")
 
 
 if __name__ == "__main__":
